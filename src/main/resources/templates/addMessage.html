@@ -1,0 +1,30 @@
+<html>
+<body>
+	<form action="#" th:action="@{/messages}" th:object="${addedMessage}"
+		method="post">
+		<table>
+			<tr>
+				<td>To userId:</td>
+				<td><input type="number" th:field="*{toWhom}" /></td>
+				<td th:if="${#fields.hasErrors('toWhom')}" th:errors="*{toWhom}">toWhom
+					Error</td>
+			</tr>
+			<tr>
+				<td>Subject:</td>
+				<td><input type="text" th:field="*{subject}" /></td>
+				<td th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}">Subject
+					Error</td>
+			</tr>
+			<tr>
+				<td>Text:</td>
+				<td><textarea rows="20" cols="20" th:field="*{text}" />
+				<td th:if="${#fields.hasErrors('text')}" th:errors="*{text}">Text
+					Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Add message</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

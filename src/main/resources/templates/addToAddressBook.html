@@ -1,0 +1,18 @@
+<html>
+<body>
+	<form action="#" th:action="@{/addressbook}" th:object="${addedUser}"
+		method="post">
+		<table>
+			<tr>
+				<td>UserId:</td>
+				<td><input type="number" th:field="*{userId}" /></td>
+				<td th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">UserId
+					Error</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Add message</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
